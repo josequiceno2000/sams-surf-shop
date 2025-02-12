@@ -1,5 +1,6 @@
 import surfshop
 import unittest
+import datetime
 
 class SamTests(unittest.TestCase):
     
@@ -15,7 +16,6 @@ class SamTests(unittest.TestCase):
                 expected = f"Successfully added {num} surfboards to cart!"
                 self.assertEqual(result, expected)
 
-    @unittest.skip
     def test_add_surf_boards_five(self):
         with self.assertRaises(surfshop.TooManyBoardsError):
             self.cart.add_surfboards(5)
@@ -23,5 +23,10 @@ class SamTests(unittest.TestCase):
     # Testing apply_locals_discount
     def test_apply_locals_discount(self):
         self.assertTrue(self.cart.apply_locals_discount() == True)
+
+    # Testing set_checkout_date
+    def test_set_checkout_date(self):
+        with self.assertRaises(surfshop.CheckoutDateError):
+            self.cart.set_checkout_date(datetime.datetime.now())
 
 unittest.main()
