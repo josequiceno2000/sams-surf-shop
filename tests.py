@@ -7,11 +7,13 @@ class SamTests(unittest.TestCase):
         self.cart = surfshop.ShoppingCart()
 
     # Testing add_surf_boards
-    def test_add_surf_boards_one(self):
-        self.assertEqual(self.cart.add_surfboards(1), "Successfully added 1 surfboard to cart!")
-    
-    def test_add_surf_boards_two(self):
-        self.assertEqual(self.cart.add_surfboards(2), "Successfully added 2 surfboards to cart!")
+    def test_add_surf_boards(self):
+        for num in [2, 3, 4]:
+            with self.subTest(num):
+                self.cart = surfshop.ShoppingCart()
+                result = self.cart.add_surfboards(num)
+                expected = f"Successfully added {num} surfboards to cart!"
+                self.assertEqual(result, expected)
 
     @unittest.skip
     def test_add_surf_boards_five(self):

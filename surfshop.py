@@ -19,6 +19,9 @@ class ShoppingCart:
             self.num_surfboards += quantity
             suffix = "" if quantity == 1 else "s"
             return f"Successfully added {quantity} surfboard{suffix} to cart!"
+    
+    def get_surfboard_count(self):
+        return self.num_surfboards
         
     def set_checkout_date(self, date):
         if date <= datetime.datetime.now():
