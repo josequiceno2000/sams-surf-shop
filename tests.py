@@ -21,7 +21,6 @@ class SamTests(unittest.TestCase):
             self.cart.add_surfboards(5)
 
     # Testing apply_locals_discount
-    @unittest.expectedFailure
     def test_apply_locals_discount(self):
         self.assertTrue(self.cart.apply_locals_discount() == True)
 

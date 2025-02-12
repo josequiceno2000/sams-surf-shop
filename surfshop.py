@@ -30,4 +30,5 @@ class ShoppingCart:
             self.checkout_date = date
     
     def apply_locals_discount(self):
-        pass
+        self.locals_discount = True
+        return self.locals_discount
