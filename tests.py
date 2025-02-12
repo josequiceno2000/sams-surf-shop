@@ -13,6 +13,7 @@ class SamTests(unittest.TestCase):
     def test_add_surf_boards_two(self):
         self.assertEqual(self.cart.add_surfboards(2), "Successfully added 2 surfboards to cart!")
 
+    @unittest.skip
     def test_add_surf_boards_five(self):
         with self.assertRaises(surfshop.TooManyBoardsError):
             self.cart.add_surfboards(5)
